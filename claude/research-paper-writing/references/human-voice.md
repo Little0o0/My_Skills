@@ -146,6 +146,49 @@ will explore broader settings."
 - Better: "We have not tested cross-device settings with participation below 5%, so the
   communication results may not transfer to mobile-scale deployments."
 
+### J. Do not offload the main argument into trailing parentheses
+When a figure or table is *doing the argumentative work* of a sentence, name it in the
+sentence grammar rather than tagging it on in parentheses. A comparative or causal claim
+that ends in "(Figure 1)" pushes its own evidence into an aside and reads as assembled;
+fold the reference into the clause so the reader sees the relation. This applies most
+sharply to sentences with a claim ("A beats B") or with multiple dangling pointers that
+interrupt parallel claims.
+- Weak: "FedRTS is more accurate than FedTiny (Figure 1)."
+- Better: "As Figure 1 shows, FedRTS is more accurate than FedTiny."
+- Weak: "The gate reduces client drift (Table 4) and raises accuracy (Table 5)."
+- Better: "Table 4 shows the gate reduces client drift, and Table 5 shows the matching
+  accuracy gain."
+
+A trailing parenthetical pointer is still fine — and often cleaner — when it is a purely
+navigational locator, not the sentence's argument: "We report ablations for temperature,
+queue size, and EMA decay (Table 5)" or "The architecture contains three client-side
+modules (Fig. 2)." Do not mechanically rewrite these; forcing every locator into clause
+grammar bloats space-constrained prose. Numeric citations to prior work "[12]" always
+stay in brackets. The test: if the parentheses carry the claim, inline them; if they
+only help the reader navigate, leave them.
+
+### K. Use italics sparingly, not as decoration
+Reserve italics (`\textit`/`\emph`) for their real jobs: marking the one defining
+introduction of a coined method, term, or abbreviation, and genuine contrastive emphasis.
+Italicizing (or bolding) a method name at its first mention is a legitimate
+defining-instance convention; the failures to avoid are (i) continuing to style the name
+on every later mention, and (ii) double-marking the same object at introduction with both
+italics *and* a parenthetical expansion, which adds no clarity and reads as
+machine-styled. Introduce the name once, then use plain type.
+- Acceptable (first-use marking): "We propose \textit{Flare}, short for Flux Adaptive
+  Redistribution."
+- Also acceptable (plain, name in parens): "We propose Flux Adaptive Redistribution
+  (Flare)."
+- Avoid (double-marked, then re-styled): "We propose \textit{Flare} (Flux Adaptive
+  Redistribution), and \textit{Flare} improves..."
+
+After the method is named, refer to it in plain type ("Flare improves...", not
+"\textit{Flare} improves...") unless a venue or project convention requires the styling.
+If a paragraph contains several italic spans for emphasis, the emphasis has lost its
+force; revise most of them away and let sentence structure carry the stress. Terms with
+their own typographic convention (variables, vector/matrix symbols, dataset or software
+names that a venue sets in a fixed style) follow that convention, not this emphasis rule.
+
 ---
 
 ## Peer-Model Review, When Available

@@ -30,6 +30,8 @@ Prioritize first-impression quality (figures/tables/layout), logical flow, and e
 8. Use readable, minimal-ink tables.
 9. Keep formatting consistent and tidy.
 10. Write in a human, argued voice, not an assembled one: narrate reasoning instead of enumerating it, report gains relative to a named baseline (with correct units) instead of stacking raw numbers in prose, spend em-dashes sparingly, and replace praise adjectives with mechanism plus evidence. See `references/human-voice.md`.
+11. Do not offload a claim's main argument into trailing parentheses. When a figure or table does the argumentative work, fold it into the sentence: write "as Figure 1 shows, FedRTS beats FedTiny", not "FedRTS beats FedTiny (Figure 1)". Purely navigational pointers ("...three client-side modules (Fig. 2)") and numeric citations ("[12]") stay parenthetical. See `references/human-voice.md` (item J).
+12. Use italics sparingly. Marking a method name once at its defining first mention is fine, but do not restyle it on every later mention, and do not double-mark at introduction with both italics and a parenthetical expansion: write "We propose \textit{Flare}, short for Flux Adaptive Redistribution" or "We propose Flux Adaptive Redistribution (Flare)", not "We propose \textit{Flare} (Flux Adaptive Redistribution)". See `references/human-voice.md` (item K).
 
 ## Paragraph Clarity Check (Important)
 
@@ -90,7 +92,7 @@ Use `references/paper-review.md` for the full checklist and workflow.
 5. If a claim cannot be supported by results, weaken or remove the claim.
 6. Before finalizing, append and answer a five-dimension self-review question list, then revise the paper based on unresolved items.
 7. Do not load all section references (Introduction/Abstract/Related Work/Method/Experiments/Conclusion) at once; load only the specific section guide needed for the current edit target.
-8. Apply `references/human-voice.md` on every prose pass: narrate reasoning rather than listing steps, interpret results relative to a named baseline (distinguishing percentage points from relative percent) and avoid stacking raw numbers in prose, restrict em-dashes, cut template filler and unearned superlatives, and make each empirical claim name its metric, setting, comparator, and direction.
+8. Apply `references/human-voice.md` on every prose pass: narrate reasoning rather than listing steps, interpret results relative to a named baseline (distinguishing percentage points from relative percent) and avoid stacking raw numbers in prose, restrict em-dashes, cut template filler and unearned superlatives, integrate figure/table/section pointers into the sentence instead of trailing parentheses, and make each empirical claim name its metric, setting, comparator, and direction.
 9. When a peer-model channel (MCP: Claude <-> Codex) is available, send drafted passages to the peer for adversarial review before finalizing, instructing it to act as a strict AI professor who dislikes AI-generated papers and prioritizes logic. Accept only technically valid criticism; reject style edits that reduce precision.
 
 ## Output Contract
@@ -99,5 +101,5 @@ When asked to rewrite or draft sections, return:
 
 1. A compact section outline (3-7 bullets).
 2. Revised paragraphs with explicit paragraph roles (opening/challenge/method/advantage/evidence/limitation).
-3. A short self-review checklist covering clarity, flow, terminology consistency, unsupported claims, missing evidence, and human-voice compliance (no step-lists for reasoning, relative gains with correct units, restrained em-dashes, no unearned superlatives per `references/human-voice.md`).
+3. A short self-review checklist covering clarity, flow, terminology consistency, unsupported claims, missing evidence, and human-voice compliance (no step-lists for reasoning, relative gains with correct units, restrained em-dashes, no unearned superlatives, no trailing-parenthesis pointers for figures/tables per `references/human-voice.md`).
 4. A claim-evidence map for each major claim in the revised text using `Claim: ... | Evidence: ... | Status: supported/needs evidence`.
