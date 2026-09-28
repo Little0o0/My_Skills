@@ -77,6 +77,30 @@ Use each question to trigger concrete edits before submission.
 4. Do benefits outweigh added complexity and new limitations?
 5. Could reviewers reasonably argue that the net benefit is negative?
 
+### 6. Evidence Integrity and Contribution Calibration
+
+1. Does every table and figure contain only measured values, with no placeholder numbers
+   presented as results?
+2. Is completed evidence clearly separated from proposed or in-progress experiments?
+3. Are all magnitudes stated with the correct unit and denominator (percentage points vs.
+   relative percent, time reduction vs. speedup)?
+4. Are author-reported numbers distinguished from numbers we reproduced?
+5. Can every claim in the Abstract and Introduction be traced to a specific section,
+   table, or figure that supports it?
+6. Is each contribution stated as a concrete object with its supported scope, rather than
+   as a framework label or a widened claim?
+7. Have we named the strongest fair alternative in its strongest configuration, rather
+   than a convenient weak baseline?
+8. If a generic existing framework can reproduce our method, do we state the exact
+   specialization and what it buys?
+9. Is every proposed causal explanation either verified or explicitly labelled as a
+   hypothesis?
+10. Do ties, losses, failure cases, and adverse regimes remain visible in the reported
+    results?
+
+Use `references/idea-and-contribution.md` for contribution-level judgment and
+`references/experiment-design.md` for whether the evidence can bear the claim.
+
 ## Adversarial Writing Workflow
 
 1. Read the paper as a skeptical reviewer.
@@ -84,3 +108,14 @@ Use each question to trigger concrete edits before submission.
 3. Mark each item as `pass`, `needs revision`, or `needs new experiment`.
 4. Revise claims, writing, experiments, or method scope accordingly.
 5. Repeat until no major rejection risk remains.
+
+## What Reviewer Approval Does and Does Not Establish
+
+A favorable review — human or peer-model — is evidence about the scope that was actually
+reviewed. It is not certification of global firstness, correctness outside that scope, or
+acceptance. Record what was reviewed and against which version, and do not upgrade
+"no objection raised" into "verified."
+
+Likewise, do not overwrite frozen review inputs, experiment artifacts, or historical
+decisions when revising. Keep revisions as new snapshots so that old evidence stays
+distinguishable from current manuscript text.

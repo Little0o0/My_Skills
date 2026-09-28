@@ -8,7 +8,8 @@ from `~/.claude/skills/`, so installing means copying these folders there.
 
 | Skill | What it does |
 | --- | --- |
-| `research-paper-writing` | Improve ML/CV/NLP paper writing: section structure, paragraph flow, claim–evidence alignment, adversarial self-review, and a human-voice (anti-AI-style) prose guide. |
+| `research-paper-writing` | Improve ML/CV/NLP paper writing: narrative framing and the one-sentence contribution test, idea and novelty framing, claim-first experiment design, section structure (incl. Preliminaries/Challenges), readable equations and pseudocode, paragraph flow, Introduction argument-chain verification, claim–evidence alignment, adversarial self-review, and a human-voice (anti-AI-style) prose guide. |
+| `writing-systems-papers` | Paragraph-level structural blueprint for 10–12 page systems papers (OSDI, SOSP, ASPLOS, NSDI, EuroSys): page allocation, section blueprints, writing patterns, and venue page limits. |
 
 ## Install on a new machine
 
@@ -34,7 +35,7 @@ CLAUDE_SKILLS_DIR=/custom/path ./install.sh   # install somewhere other than ~/.
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R research-paper-writing ~/.claude/skills/
+cp -R research-paper-writing writing-systems-papers ~/.claude/skills/
 ```
 
 Project-scoped instead of global: copy into a project's `.claude/skills/` rather than

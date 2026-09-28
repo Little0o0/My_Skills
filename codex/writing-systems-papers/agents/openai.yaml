@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing Systems Papers"
+  short_description: "Plan systems-paper structure and page budgets"
+  default_prompt: "Use $writing-systems-papers to plan this systems manuscript around its contribution, evaluation, and target venue."

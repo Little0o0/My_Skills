@@ -183,6 +183,46 @@ flowchart TB
 
 `Implementation details include hyperparameters (e.g., layer count, feature dimensions), coordinate transforms/normalization, and other practical details. Put them near the end of Method or in a dedicated Implementation Details section.`
 
+## Claim and Assumption Discipline
+
+Method sections fail review less often for unclear prose than for claims the section does
+not actually establish. Apply these when the method includes theory or asserts a benefit.
+
+### Keep assumptions adjacent to claims
+
+State each theoretical result in the main text with its assumptions and its core
+conclusion together. A theorem whose conditions live three pages away, in an appendix, or
+only in the proof reads as stronger than it is. Keep essential proof ideas in the main
+text when they explain the mechanism; move full derivations to the appendix.
+
+Distinguish the reading path from the audit trail: in the main text, give the result's
+meaning and its indispensable scope; put full parameter ranges and quantifiers with the
+formal statement. Keep essential assumptions visible without interrupting every positive
+sentence with a repeated disclaimer.
+
+### Say what the method actually predicts or optimizes
+
+Be precise about the target object, and do not let related-but-different objects stand in
+for each other:
+
+1. The actual prediction target and its error/moment model, versus a posterior
+   calibration applied afterward.
+2. The optimized objective, versus the metric it is hoped to improve.
+3. A learned representation, versus a guarantee about the quantity it represents.
+
+### Do not imply benefits the method has not earned
+
+Within the Method section, do not imply:
+
+1. A new training method, when the contribution is an inference-time rule.
+2. A distribution-shift or generalization guarantee, when the analysis is in-distribution.
+3. An empirical benefit, before the Experiments section provides it.
+
+Describe what the module computes and why the design follows from the problem; leave the
+performance claim to the evidence. See `references/idea-and-contribution.md` for
+calibrating contribution claims and `references/experiment-design.md` for the evidence
+each claim type requires.
+
 ## Example Bank
 
 1. `references/examples/method-examples.md`

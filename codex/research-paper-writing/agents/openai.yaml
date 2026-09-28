@@ -1,4 +1,4 @@
 interface:
   display_name: "Research Paper Writing"
-  short_description: "Draft evidence-grounded papers with a clear five-part argument"
+  short_description: "Frame, write, and review evidence-grounded papers"
   default_prompt: "Use $research-paper-writing to structure or revise this research manuscript and its Chinese brief."

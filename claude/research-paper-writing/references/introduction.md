@@ -399,6 +399,117 @@ Local cite:
 12. `references/examples/introduction/pipeline-version-4-observation-driven.md`
 13. `references/examples/introduction/pipeline-not-recommended-abstract-only.md`
 
+## Introduction Argument Chain (Verify Before Finalizing)
+
+The templates above give the paragraph *forms*. This section checks the *argument*. A
+draft can satisfy every template and still fail here, because template compliance is
+local while the argument is global. Run this pass on every Introduction.
+
+### 1. Keep the background limitation distinct from your problem
+
+The opening motivation (why the field cares) and the problem this paper solves are two
+different things. Keep them separate.
+
+A broad quality, cost, or scalability tradeoff must not silently become the claimed
+contribution. If the opening laments that a task is expensive and the contribution is a
+sampling rule, the Introduction has promised something the paper does not deliver.
+
+- Weak: opens with "3D reconstruction remains slow and memory-hungry," then contributes a
+  view-selection heuristic — the reader expects a systems result.
+- Better: opens with the general cost pressure, then narrows to the specific decision
+  (which views to keep) whose current solution is the paper's actual target.
+
+Prefer declarative prose. Do not end the background with a rhetorical question, which
+tends to enlarge the paper's scope beyond what the method addresses.
+
+### 2. The absence of your module is not a problem statement
+
+"Prior methods lack an adaptive gating term" is a description of your method, not a
+problem. State the problem so that a reviewer can understand it **without knowing what
+you propose**: what breaks, when it breaks, and what undesirable outcome it permits.
+
+Test: delete every mention of the proposed method from the problem paragraph. If nothing
+identifiable remains, the problem has not been stated.
+
+### 3. Read the topic sentences consecutively
+
+Extract the first sentence of each paragraph and read them in order, ignoring everything
+else. The chain must hold:
+
+```
+background limitation
+  -> the baseline class addresses that limitation
+    -> the problem concerns that baseline class
+      -> the analysis examines that same problem
+        -> each design choice answers a finding from that analysis
+          -> the evidence tests those design choices
+```
+
+Adding "However," "Further analysis shows," or "Based on this observation" does **not**
+repair a change of subject. If a link is broken, the fix is structural, not transitional.
+
+If a second contribution cannot fit this chain, resolve the scope mismatch explicitly —
+present it as a separate secondary contribution, or leave it out of the Introduction's
+main argument. Do not invent a shared root cause to cover two unrelated components. One
+specific defensible argument beats a widened problem that accommodates everything.
+
+### 4. Check that the problem implies your intervention
+
+Ask what direct remedy a reader would expect after reading your problem statement. If the
+expected remedy is not what you propose, either the problem is mis-stated or the
+connection needs an explicit analysis step.
+
+Sharing a broad outcome such as "poor task quality" is not enough to connect a problem to
+a design. Hold competing changes fixed when arguing the connection.
+
+### 5. Class-level claims need class-level support
+
+When Part B groups prior work into a method class:
+
+1. One method's observed degradation is not a class-level failure. Support a class claim
+   through the **shared mechanism**, or through representative evidence across the class.
+2. Check the actual works behind grouped citations. Acknowledge generic methods that
+   already reproduce the computation.
+3. Broadening the wording, or renaming one algorithm as a class, establishes neither a
+   shared gap nor originality.
+4. Keep member-specific differences out of the Introduction; they belong in Related Work
+   or the preliminaries. But do not flatten meaningful differences away — synthesis must
+   preserve them even when individual names are absent from the prose.
+5. Do not imply that prior methods fail *in their own setting* merely because this paper
+   studies an extension.
+
+### 6. An explanation of a failure is not an established cause
+
+If you observed degradation and propose a reason for it, the reason is a hypothesis until
+tested. Write it as one: "we attribute this to X" and then show where X is verified, or
+label it as a conjecture. Do not call an untested explanation a root cause.
+
+### 7. Two-way correspondence with the body
+
+Treat the Introduction as a compressed account of the body, checked in both directions:
+
+1. **Forward:** every introductory claim has a specific body location that supports it.
+2. **Backward:** every main contribution in the body is previewed in the Introduction.
+
+Do not change targets, scope, or assumptions between the Introduction and the body, and
+do not leave an introductory claim unsupported elsewhere. The Conclusion returns to
+supported conclusions rather than introducing new claims.
+
+### 8. The unfamiliar-reader test
+
+Before finalizing, confirm that a reader who does not know the paper can:
+
+1. State the problem and its consequence **without naming the proposed method**.
+2. Explain why the analysis motivates each component of the design.
+
+If either fails, the Introduction is not finished regardless of how polished the prose is.
+
+### When revising from review comments
+
+Update the outline as well as the prose. Retaining an obsolete outline or brief while
+patching sentences reproduces the same structural failure in the next draft. When a
+paragraph role changes, propagate the change to any plan, brief, or notes that exist.
+
 ## Quick Quality Checklist
 
 1. Does the first sentence of each paragraph state its message?
@@ -406,3 +517,8 @@ Local cite:
 3. Are technical challenge, technical reason, and solved mechanism all explicit?
 4. Are claims in Introduction aligned with experiment evidence?
 5. Is terminology stable across all sections?
+6. Is the opening motivation kept distinct from the problem the paper solves?
+7. Can the problem be stated without naming the proposed method?
+8. Do the topic sentences, read consecutively, form an unbroken chain?
+9. Are class-level gap claims supported by the shared mechanism or representative evidence?
+10. Is every proposed cause either verified or labelled as a hypothesis?
